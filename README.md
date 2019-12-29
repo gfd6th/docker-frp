@@ -12,10 +12,10 @@ docker build -t frp .
 
 Run frp server:
 ```shell
-docker run -d -p 7000:7000 --name=frps --restart=always -v /path/to/config:/etc/frp frp
+docker run -d -p 7000:7000 --name=frps --restart=always -v $(pwd):/etc/frp frp
 ```
 
 Run frp client:
 ```shell
-docker run -d --name=frpc --restart=always -v /path/to/config:/etc/frp frp frpc -c /etc/frp/frpc.ini
+docker run -d --name=frpc --restart=always -v $(pwd):/etc/frp frp frpc -c /etc/frp/frpc.ini
 ```
